@@ -10,9 +10,11 @@
 
 
     <EditText
+        android:id="@+id/edit_distance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/distancia"
+        android:inputType="number"
         android:textColorHint="@color/lightgray">
 
     </EditText>
@@ -26,10 +28,12 @@
     </TextView>
 
     <EditText
+        android:id="@+id/edit_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/preco"
+        android:inputType="numberDecimal"
         android:textColorHint="@color/lightgray">
 
     </EditText>
@@ -43,10 +47,12 @@
     </TextView>
 
     <EditText
+        android:id="@+id/edit_autonomy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/autonomia"
+        android:inputType="numberDecimal"
         android:textColorHint="@color/lightgray">
 
     </EditText>
@@ -72,24 +78,26 @@
     </TextView>
 
     <TextView
+        android:id="@+id/text_totalvalue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/valor_total"
-        android:textSize="28sp"
-        android:textColor="@color/lightblue">
+        android:textColor="@color/lightblue"
+        android:textSize="28sp">
 
     </TextView>
 
     <Button
+        android:id="@+id/button_calculate"
         android:layout_width="256dp"
         android:layout_height="60dp"
-        android:text="@string/calcular"
-        android:layout_marginTop="30dp"
         android:layout_gravity="center"
-        android:textSize="17sp"
-        android:backgroundTint="@color/teal_700">
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/calcular"
+        android:textSize="17sp">
 
 
     </Button>
