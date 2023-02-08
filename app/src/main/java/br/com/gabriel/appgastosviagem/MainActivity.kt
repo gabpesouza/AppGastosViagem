@@ -26,7 +26,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun calculate(){
-        Toast.makeText(this, "Botao clicado!",Toast.LENGTH_SHORT).show();
+
+        val distance = binding.editDistance.text.toString().toFloat();
+        val price = binding.editPrice.text.toString().toFloat();
+        val autonomy = binding.editAutonomy.text.toString().toFloat();
+
+        var totalValue = (distance * price) / autonomy;
+        var totalValueString = "R$:${"%.2f".format(totalValue)}"
+
+        binding.textTotalvalue.text = totalValueString;
+
+
+        //Toast.makeText(this, totalValueString,Toast.LENGTH_SHORT).show();
     }
 
 
