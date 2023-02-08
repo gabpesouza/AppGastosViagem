@@ -25,16 +25,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
        }
     }
 
+    private fun isValid(): Boolean{
+        (return binding.editDistance.text.toString() != ""
+         && binding.editPrice.text.toString() != ""
+         && binding.editAutonomy.text.toString() != ""
+         && binding.editAutonomy.text.toString().toFloat() != 0f);
+    }
+
     private fun calculate(){
 
-        val distance = binding.editDistance.text.toString().toFloat();
-        val price = binding.editPrice.text.toString().toFloat();
-        val autonomy = binding.editAutonomy.text.toString().toFloat();
+        if(isValid()){
 
-        var totalValue = (distance * price) / autonomy;
-        var totalValueString = "R$:${"%.2f".format(totalValue)}"
+            val distance = binding.editDistance.text.toString().toFloat();
+            val price = binding.editPrice.text.toString().toFloat();
+            val autonomy = binding.editAutonomy.text.toString().toFloat();
 
-        binding.textTotalvalue.text = totalValueString;
+            var totalValue = (distance * price) / autonomy;
+            var totalValueString = "R$:${"%.2f".format(totalValue)}"
+
+
+            binding.textTotalvalue.text = totalValueString;
+
+        }else{
+            Toast.makeText(this,"Preencha os campos corretamente",Toast.LENGTH_SHORT).show();
+        }
 
 
         //Toast.makeText(this, totalValueString,Toast.LENGTH_SHORT).show();
